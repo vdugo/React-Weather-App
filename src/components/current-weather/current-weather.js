@@ -4,10 +4,12 @@ const CurrentWeather = () => {
     return (
         <div className='weather'>
             <div className="top">
-                <p className='city'>City</p>
-                <p className="weather-description">Sunny</p>
+                <div>
+                    <p className='city'>Los Angeles</p>
+                    <p className="weather-description">Sunny</p>
+                </div>
+                <img src="icons/01d.png" alt="weather" className='weather-icon' />
             </div>
-            <img src="icons/01d.png" alt="weather" className='weather-icon' />
         </div>
     )
 }
