@@ -6,7 +6,7 @@ const DAYS_OF_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'S
 const Forecast = ({data}) => {
     const dayInAWeek = new Date().getDay()
     const forecastDays = DAYS_OF_WEEK.slice(dayInAWeek, DAYS_OF_WEEK.length).concat(DAYS_OF_WEEK.slice(0, dayInAWeek))
-    
+
     return (
         <>
             <label className="title">Daily</label>
@@ -23,7 +23,34 @@ const Forecast = ({data}) => {
                                 </div>
                             </AccordionItemButton>
                         </AccordionItemHeading>
-                        <AccordionItemPanel></AccordionItemPanel>
+                        <AccordionItemPanel>
+                            <div className="daily-details-grid">
+                                <div className="daily-details-grid-item">
+                                    <label>Pressure</label>
+                                    <label>{item.main.pressure}hPa</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Humidity</label>
+                                    <label>{item.main.humidity}%</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Clouds</label>
+                                    <label>{item.clouds.all}%</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Wind Speed</label>
+                                    <label>{item.wind.speed}m/s</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Sea Level</label>
+                                    <label>{item.main.sea_level}m</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Feels like</label>
+                                    <label>{Math.round(item.main.feels_like)}°C</label>
+                                </div>
+                            </div>
+                        </AccordionItemPanel>
                     </AccordionItem>
                 ))}
             </Accordion>
