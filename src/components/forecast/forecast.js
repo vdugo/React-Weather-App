@@ -1,12 +1,12 @@
 import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from "react-accessible-accordion"
+import './forecast.css'
 
 const DAYS_OF_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 const Forecast = ({data}) => {
     const dayInAWeek = new Date().getDay()
     const forecastDays = DAYS_OF_WEEK.slice(dayInAWeek, DAYS_OF_WEEK.length).concat(DAYS_OF_WEEK.slice(0, dayInAWeek))
-
-    console.log(forecastDays)
+    
     return (
         <>
             <label className="title">Daily</label>
