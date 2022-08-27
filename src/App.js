@@ -17,8 +17,8 @@ function App() {
 
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {
-        const weatherResponse = await response[0].json
-        const forecastResponse = await response[1].json
+        const weatherResponse = await response[0].json()
+        const forecastResponse = await response[1].json()
 
         setCurrentWeather({ city: searchData.label , ...weatherResponse })
         setForecast({ city: searchData.label , ...forecastResponse })
@@ -27,7 +27,7 @@ function App() {
   }
 
   console.log(currentWeather)
-  console.log(forecast )
+  console.log(forecast)
 
   return (
     <div className="container">
